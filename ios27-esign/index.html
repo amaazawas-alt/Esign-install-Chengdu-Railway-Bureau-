@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b14">
+  <meta name="description" content="Install ESign on iOS 27 or later using Open Minis, LocalDevVPN and your Apple ID. A no-computer guide by Amaazbots.">
+  <title>Install ESign on iOS 27 | Amaazbots</title>
+  <style>
+    :root{color-scheme:dark;--bg:#070b14;--panel:#101725;--edge:rgba(205,220,255,.12);--text:#f5f8ff;--muted:#a7b5c9;--blue:#74b7ff;--bright:#307cff;--radius:24px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse 65% 510px at 88% -2%,rgba(30,93,210,.23),transparent 75%),radial-gradient(ellipse 40% 420px at 0 38%,rgba(30,95,195,.10),transparent 75%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit} button{font:inherit} a,button{touch-action:manipulation} :focus-visible{outline:3px solid #85c5ff;outline-offset:4px}
+    .wrap{width:min(1060px,calc(100% - 44px));margin-inline:auto}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);gap:20px}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:750;letter-spacing:-.035em;font-size:19px}
+    .brand-mark{display:grid;place-items:center;width:29px;height:29px;color:#fff;background:linear-gradient(145deg,#548eff,#2454d6);border-radius:9px;font-weight:850;font-size:14px;box-shadow:0 5px 24px #276cff44}
+    .nav-link{font-size:14px;color:#b9c7db;text-decoration:none;white-space:nowrap}.nav-link:hover{color:#fff}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:48px;padding:76px 0 74px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#a9cfff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#69a9ff;box-shadow:0 0 13px #4b9fff}
+    h1,h2,h3,p{margin:0}h1{font-size:clamp(48px,6.5vw,76px);line-height:.99;letter-spacing:-.065em;font-weight:800;margin:20px 0 20px}h1 span{color:#8bc4ff}
+    .lead{color:#b0bfd2;font-size:18px;max-width:530px;line-height:1.65}
+    .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:13px;margin-top:29px}
+    .button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;gap:9px;padding:0 20px;border:1px solid transparent;border-radius:14px;text-decoration:none;font-weight:750;font-size:15px;cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+    .button:hover{transform:translateY(-2px)}.primary{background:#f7faff;color:#08101e;box-shadow:0 8px 32px rgba(92,156,250,.16)}.primary:hover{background:#dceeff}
+    .secondary{color:#eaf3ff;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.13)}.secondary:hover{background:rgba(255,255,255,.08)}
+    .pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}.pill{padding:6px 11px;color:#c3d0e2;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:999px;font-size:13px;font-weight:650}
+    .visual{position:relative;min-height:300px;display:grid;place-items:center}.visual:before{content:"";position:absolute;width:250px;height:250px;background:#2d7fff;filter:blur(100px);opacity:.20;pointer-events:none}
+    .visual-card{position:relative;width:min(100%,335px);padding:28px;border:1px solid rgba(202,225,255,.16);border-radius:28px;background:linear-gradient(145deg,rgba(43,62,91,.66),rgba(14,23,39,.82));box-shadow:0 28px 80px #0005,inset 0 1px 0 #fff1;backdrop-filter:blur(24px)}
+    .app-icon{width:90px;height:90px;border-radius:23px;object-fit:cover;box-shadow:0 12px 30px #0006}.visual-title{font-size:25px;letter-spacing:-.04em;margin-top:16px}.visual-sub{color:#aebed3;font-size:14px;margin-top:2px}.visual-rule{height:1px;background:#ffffff14;margin:22px 0}.visual-line{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:14px;color:#c1cce0}.visual-line strong{color:#eef5ff;font-size:13px}.visual-line+.visual-line{margin-top:10px}
+    .section{padding:22px 0 76px;scroll-margin-top:30px}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:25px}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:#83bfff}.section h2{font-size:clamp(31px,4vw,42px);line-height:1.1;letter-spacing:-.045em;margin-top:8px}.section-intro{max-width:420px;color:var(--muted);font-size:15px}
+    .steps{display:grid;gap:14px}.step{display:grid;grid-template-columns:55px minmax(0,1fr);gap:20px;padding:26px;border:1px solid var(--edge);border-radius:var(--radius);background:linear-gradient(135deg,rgba(19,29,46,.94),rgba(13,20,33,.92));box-shadow:0 16px 45px rgba(0,0,0,.12)}
+    .step-number{width:43px;height:43px;display:grid;place-items:center;border-radius:14px;background:#1c365c;border:1px solid #4683d44d;color:#a4ceff;font-weight:800}
+    .step h3{font-size:21px;letter-spacing:-.03em;line-height:1.25;margin:3px 0 8px}.step p{color:#afbdd0;font-size:15px;max-width:700px}.step-content{min-width:0}
+    .apps{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:19px}.app{display:flex;align-items:center;gap:13px;padding:15px;border:1px solid #ffffff13;border-radius:16px;background:#ffffff06;text-decoration:none;transition:background .2s,border-color .2s}.app:hover{background:#ffffff0d;border-color:#ffffff29}
+    .app-badge{width:42px;height:42px;display:grid;place-items:center;flex:none;border-radius:12px;background:linear-gradient(145deg,#425f9d,#182b50);color:#d7e8ff;font-weight:800;font-size:16px}.app-badge.vpn{background:linear-gradient(145deg,#327c8b,#153943)}.app-copy{min-width:0}.app-name{display:block;font-weight:750;line-height:1.2}.app-desc{display:block;margin-top:3px;color:#aebdd0;font-size:13px}.app-get{margin-left:auto;color:#9ecaff;font-size:13px;font-weight:800}
+    .command{display:flex;align-items:center;gap:12px;margin-top:19px;padding:15px;border:1px solid #7eaeef2c;border-radius:15px;background:#070d18}.command code{min-width:0;flex:1;overflow-wrap:anywhere;color:#e8f3ff;font:13px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;user-select:all}.copy{flex:none;border:1px solid #ffffff24;border-radius:10px;background:#243550;color:#fff;padding:8px 12px;font-size:13px;font-weight:750;cursor:pointer}.copy:hover{background:#304968}
+    .inline-actions{display:flex;align-items:center;flex-wrap:wrap;gap:13px;margin-top:15px}.blue-button{background:#347df0;color:white}.blue-button:hover{background:#4b91ff}.small-note{font-size:13px!important;color:#91a4bd!important}.copy-status{min-height:1.4em;margin-top:7px!important;font-size:13px!important;color:#a6d4ff!important}
+    .instructions{padding-left:20px;margin:14px 0 0;color:#b5c2d3;font-size:15px}.instructions li{padding-left:3px;margin:7px 0}.instructions strong{color:#f3f7ff}.step a.text-link,.faq a,.foot a{color:#a8ceff;text-underline-offset:3px}
+    .help{padding:0 0 80px}.faq-title{font-size:28px;letter-spacing:-.04em;margin-bottom:19px}.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq{border:1px solid var(--edge);border-radius:20px;background:#101724;padding:21px}.faq h3{font-size:16px;letter-spacing:-.01em}.faq p{font-size:14px;color:#aab9cd;margin-top:8px}.notice{display:flex;gap:12px;color:#b7c8db;font-size:14px;margin-top:16px;padding:17px 19px;border-radius:15px;background:#0d1d31;border:1px solid #2f5b8a58}.notice strong{color:#d9eafe}
+    .foot{border-top:1px solid #ffffff12;padding:25px 0 38px;display:flex;align-items:center;justify-content:space-between;gap:15px;color:#90a0b5;font-size:13px}.foot a{text-decoration:none}.foot a:hover{text-decoration:underline}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:35px;padding:58px 0}.visual{min-height:auto;justify-items:stretch}.visual-card{width:100%;display:grid;grid-template-columns:74px 1fr;column-gap:17px;align-items:center;padding:20px}.app-icon{width:74px;height:74px;border-radius:19px;grid-row:span 2}.visual-title{font-size:22px;margin:0}.visual-rule{grid-column:1/-1;margin:16px 0}.visual-line{grid-column:1/-1}.section-heading{align-items:start;flex-direction:column;gap:10px}}
+    @media(max-width:520px){.wrap{width:min(100% - 32px,1060px)}.nav{min-height:68px}.hero{padding:48px 0}.lead{font-size:16px}.hero-actions .button{flex:1}.section{padding-bottom:55px}.step{grid-template-columns:1fr;gap:12px;padding:20px}.step-number{width:38px;height:38px;border-radius:12px}.apps,.faq-grid{grid-template-columns:1fr}.command{align-items:flex-start;flex-direction:column}.copy{align-self:stretch}.inline-actions .button{width:100%}.foot{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="https://www.amaazbotsite.com/" aria-label="Amaazbots home"><span class="brand-mark" aria-hidden="true">A</span>Amaazbots</a>
+    <a class="nav-link" href="#setup">Installation guide</a>
+  </header>
+  <main>
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">The no-computer guide</div>
+        <h1 id="hero-title">ESign on iOS.<br><span>Made simple.</span></h1>
+        <p class="lead">Install ESign and sign IPA files right on your iPhone or iPad using your Apple ID.</p>
+        <div class="hero-actions"><a class="button primary" href="#setup">Get started</a><a class="button secondary" href="https://www.youtube.com/watch?v=RI_54-iOK9o" target="_blank" rel="noopener noreferrer">Watch tutorial</a></div>
+        <div class="pills" aria-label="Requirements"><span class="pill">iOS 27 or later</span><span class="pill">No computer</span><span class="pill">Wi-Fi required</span></div>
+      </div>
+      <div class="visual" aria-label="ESign app details"><div class="visual-card">
+        <img class="app-icon" src="../esign-logo.png" alt="ESign app icon" width="90" height="90">
+        <div><h2 class="visual-title">ESign</h2><p class="visual-sub">IPA signing on your device</p></div>
+        <div class="visual-rule"></div>
+        <div class="visual-line"><span>Installation</span><strong>Open Minis</strong></div>
+        <div class="visual-line"><span>Signing</span><strong>Your Apple ID</strong></div>
+      </div></div>
+    </section>
+    <section class="section wrap" id="setup" aria-labelledby="setup-title">
+      <div class="section-heading"><div><div class="kicker">Let's get you set up</div><h2 id="setup-title">A few steps. You're in.</h2></div><p class="section-intro">Open this page on the iPhone or iPad you want to use. You'll need Wi-Fi and Developer Mode.</p></div>
+      <div class="steps">
+        <article class="step"><div class="step-number" aria-hidden="true">1</div><div class="step-content"><h3>Get the two free apps</h3><p>Download both apps from the App Store, then open LocalDevVPN and connect it.</p>
+          <div class="apps"><a class="app" href="https://apps.apple.com/app/id6759188481"><span class="app-badge" aria-hidden="true">M</span><span class="app-copy"><span class="app-name">Open Minis</span><span class="app-desc">Runs the installer</span></span><span class="app-get">GET</span></a>
+          <a class="app" href="https://apps.apple.com/app/id6755608044"><span class="app-badge vpn" aria-hidden="true">V</span><span class="app-copy"><span class="app-name">LocalDevVPN</span><span class="app-desc">Connect before setup</span></span><span class="app-get">GET</span></a></div>
+        </div></article>
+        <article class="step"><div class="step-number" aria-hidden="true">2</div><div class="step-content"><h3>Open the ESign installer</h3><p>Open the command in Open Minis, then press Enter in Shell Terminal. You can also copy and paste it yourself.</p>
+          <div class="command"><code id="install-command">wget -qO- https://applejr.net/sideload/install.sh | sh</code><button class="copy" id="copy-button" type="button">Copy command</button></div>
+          <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+          <div class="inline-actions"><a class="button blue-button" id="minis-link" href="minis://open_terminal?init_command=wget%20-qO-%20https%3A%2F%2Fapplejr.net%2Fsideload%2Finstall.sh%20%7C%20sh">Open in Open Minis</a><span class="small-note">The command comes from AppleJr's ESign installer.</span></div>
+        </div></article>
+        <article class="step"><div class="step-number" aria-hidden="true">3</div><div class="step-content"><h3>Pair, sign in and install</h3><p>Follow the setup on your device. Keep Open Minis and LocalDevVPN running until ESign is installed.</p>
+          <ol class="instructions"><li>In the installer, tap <strong>Start setup</strong>, then <strong>Start pairing</strong>.</li><li>Open <strong>Settings → Privacy &amp; Security → Developer Mode</strong> and follow the pairing prompt. Enable Developer Mode and restart if needed.</li><li>Enter the pairing code shown in Open Minis. Keep its audio player open while pairing.</li><li>Sign in with your Apple ID in the installer's local setup and complete any verification prompts. ESign will be signed and installed.</li></ol>
+        </div></article>
+      </div>
+    </section>
+    <section class="wrap help" aria-labelledby="help-title"><h2 class="faq-title" id="help-title">Good to know</h2><div class="faq-grid">
+      <article class="faq"><h3>Do I need a certificate?</h3><p>You don't need to import an enterprise certificate. The installer uses your Apple ID to create personal signing credentials.</p></article>
+      <article class="faq"><h3>Will I need to refresh?</h3><p>Apps signed with a free Apple ID generally need refreshing every seven days, and Apple's free-account limits still apply.</p></article>
+      <article class="faq"><h3>Which iOS versions work?</h3><p>This installer is intended for iOS and iPadOS 27 or later. A Wi-Fi connection is required for setup.</p></article>
+      <article class="faq"><h3>Need help or want to renew?</h3><p>See the <a href="https://applejr.net/sideload/" target="_blank" rel="noopener noreferrer">AppleJr setup and renewal guide</a> for the latest instructions and troubleshooting.</p></article>
+    </div><div class="notice"><span aria-hidden="true">ⓘ</span><span><strong>Account reminder:</strong> This page never asks for your Apple ID. The third-party installer handles sign-in; keep two-factor authentication enabled and never share verification codes.</span></div></section>
+  </main>
+  <footer class="wrap foot"><span>Made for the Amaazbots community.</span><span>Installer by <a href="https://applejr.net/sideload/" target="_blank" rel="noopener noreferrer">AppleJr</a> · <a href="https://www.amaazbotsite.com/">Amaazbots home</a></span></footer>
+  <script>
+    (() => {
+      const command = document.getElementById('install-command').textContent.trim();
+      const button = document.getElementById('copy-button');
+      const status = document.getElementById('copy-status');
+      button.addEventListener('click', async () => {
+        try {
+          if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
+          await navigator.clipboard.writeText(command);
+          button.textContent = 'Copied!';
+          status.textContent = 'Command copied. Paste it into Shell Terminal in Open Minis.';
+          window.setTimeout(() => { button.textContent = 'Copy command'; }, 2500);
+        } catch (_) {
+          const selection = window.getSelection();
+          const range = document.createRange();
+          range.selectNodeContents(document.getElementById('install-command'));
+          selection.removeAllRanges(); selection.addRange(range);
+          status.textContent = 'Command selected. Copy it, then paste it into Open Minis.';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
