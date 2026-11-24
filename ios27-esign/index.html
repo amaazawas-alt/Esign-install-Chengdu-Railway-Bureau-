@@ -15,7 +15,7 @@
     .wrap{width:min(1060px,calc(100% - 44px));margin-inline:auto}
     .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);gap:20px}
     .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:750;letter-spacing:-.035em;font-size:19px}
-    .brand-mark{display:grid;place-items:center;width:29px;height:29px;color:#fff;background:linear-gradient(145deg,#548eff,#2454d6);border-radius:9px;font-weight:850;font-size:14px;box-shadow:0 5px 24px #276cff44}
+    .brand-mark{display:block;width:36px;height:36px;object-fit:contain;flex:none}
     .nav-link{font-size:14px;color:#b9c7db;text-decoration:none;white-space:nowrap}.nav-link:hover{color:#fff}
     .hero{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:48px;padding:76px 0 74px}
     .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#a9cfff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
@@ -35,7 +35,7 @@
     .step-number{width:43px;height:43px;display:grid;place-items:center;border-radius:14px;background:#1c365c;border:1px solid #4683d44d;color:#a4ceff;font-weight:800}
     .step h3{font-size:21px;letter-spacing:-.03em;line-height:1.25;margin:3px 0 8px}.step p{color:#afbdd0;font-size:15px;max-width:700px}.step-content{min-width:0}
     .apps{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:19px}.app{display:flex;align-items:center;gap:13px;padding:15px;border:1px solid #ffffff13;border-radius:16px;background:#ffffff06;text-decoration:none;transition:background .2s,border-color .2s}.app:hover{background:#ffffff0d;border-color:#ffffff29}
-    .app-badge{width:42px;height:42px;display:grid;place-items:center;flex:none;border-radius:12px;background:linear-gradient(145deg,#425f9d,#182b50);color:#d7e8ff;font-weight:800;font-size:16px}.app-badge.vpn{background:linear-gradient(145deg,#327c8b,#153943)}.app-copy{min-width:0}.app-name{display:block;font-weight:750;line-height:1.2}.app-desc{display:block;margin-top:3px;color:#aebdd0;font-size:13px}.app-get{margin-left:auto;color:#9ecaff;font-size:13px;font-weight:800}
+    .app-badge{width:42px;height:42px;display:block;object-fit:cover;flex:none;border-radius:12px;background:linear-gradient(145deg,#425f9d,#182b50);color:#d7e8ff;font-weight:800;font-size:16px}.app-badge.vpn{background:linear-gradient(145deg,#327c8b,#153943)}.app-copy{min-width:0}.app-name{display:block;font-weight:750;line-height:1.2}.app-desc{display:block;margin-top:3px;color:#aebdd0;font-size:13px}.app-get{margin-left:auto;color:#9ecaff;font-size:13px;font-weight:800}
     .command{display:flex;align-items:center;gap:12px;margin-top:19px;padding:15px;border:1px solid #7eaeef2c;border-radius:15px;background:#070d18}.command code{min-width:0;flex:1;overflow-wrap:anywhere;color:#e8f3ff;font:13px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;user-select:all}.copy{flex:none;border:1px solid #ffffff24;border-radius:10px;background:#243550;color:#fff;padding:8px 12px;font-size:13px;font-weight:750;cursor:pointer}.copy:hover{background:#304968}
     .inline-actions{display:flex;align-items:center;flex-wrap:wrap;gap:13px;margin-top:15px}.blue-button{background:#347df0;color:white}.blue-button:hover{background:#4b91ff}.small-note{font-size:13px!important;color:#91a4bd!important}.copy-status{min-height:1.4em;margin-top:7px!important;font-size:13px!important;color:#a6d4ff!important}
     .instructions{padding-left:20px;margin:14px 0 0;color:#b5c2d3;font-size:15px}.instructions li{padding-left:3px;margin:7px 0}.instructions strong{color:#f3f7ff}.step a.text-link,.faq a,.foot a{color:#a8ceff;text-underline-offset:3px}
@@ -48,7 +48,7 @@
 </head>
 <body>
   <header class="wrap nav">
-    <a class="brand" href="https://www.amaazbotsite.com/" aria-label="Amaazbots home"><span class="brand-mark" aria-hidden="true">A</span>Amaazbots</a>
+    <a class="brand" href="https://www.amaazbotsite.com/" aria-label="Amaazbots home"><img class="brand-mark" src="https://static.wixstatic.com/media/49e294_a8aca60ca0b241b4988de416735d4489~mv2.png" alt="" aria-hidden="true">Amaazbots</a>
     <a class="nav-link" href="#setup">Installation guide</a>
   </header>
   <main>
@@ -72,8 +72,8 @@
       <div class="section-heading"><div><div class="kicker">Let's get you set up</div><h2 id="setup-title">A few steps. You're in.</h2></div><p class="section-intro">Open this page on the iPhone or iPad you want to use. You'll need Wi-Fi and Developer Mode.</p></div>
       <div class="steps">
         <article class="step"><div class="step-number" aria-hidden="true">1</div><div class="step-content"><h3>Get the two free apps</h3><p>Download both apps from the App Store, then open LocalDevVPN and connect it.</p>
-          <div class="apps"><a class="app" href="https://apps.apple.com/app/id6759188481"><span class="app-badge" aria-hidden="true">M</span><span class="app-copy"><span class="app-name">Open Minis</span><span class="app-desc">Runs the installer</span></span><span class="app-get">GET</span></a>
-          <a class="app" href="https://apps.apple.com/app/id6755608044"><span class="app-badge vpn" aria-hidden="true">V</span><span class="app-copy"><span class="app-name">LocalDevVPN</span><span class="app-desc">Connect before setup</span></span><span class="app-get">GET</span></a></div>
+          <div class="apps"><a class="app" href="https://apps.apple.com/app/id6759188481"><img class="app-badge" src="https://static.wixstatic.com/media/49e294_b61a0801c80945f49d24dbe7ed625a91~mv2.jpg" alt="" aria-hidden="true"><span class="app-copy"><span class="app-name">Open Minis</span><span class="app-desc">Runs the installer</span></span><span class="app-get">GET</span></a>
+          <a class="app" href="https://apps.apple.com/app/id6755608044"><img class="app-badge" src="https://static.wixstatic.com/media/49e294_a5c57fa08f9b426d8d069bf05ffe9ffa~mv2.jpg" alt="" aria-hidden="true"><span class="app-copy"><span class="app-name">LocalDevVPN</span><span class="app-desc">Connect before setup</span></span><span class="app-get">GET</span></a></div>
         </div></article>
         <article class="step"><div class="step-number" aria-hidden="true">2</div><div class="step-content"><h3>Open the ESign installer</h3><p>Open the command in Open Minis, then press Enter in Shell Terminal. You can also copy and paste it yourself.</p>
           <div class="command"><code id="install-command">wget -qO- https://applejr.net/sideload/install.sh | sh</code><button class="copy" id="copy-button" type="button">Copy command</button></div>
